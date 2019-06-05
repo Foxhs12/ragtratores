@@ -12,10 +12,10 @@ $message = strip_tags(htmlspecialchars($_POST['message']));
 
 // Create the email and send the message
 $to = "ragtratores@ragtratores.com.br"; // Add your email address inbetween the "" replacing yourname@yourdomain.com - This is where the form will send a message to.
-$subject = "Website Contact Form:  $name";
-$body = "You have received a new message from your website contact form.\n\n"."Here are the details:\n\nName: $name\n\nEmail: $email\n\nPhone: $phone\n\nMessage:\n$message";
-$header = "From: noreply@ragtratores.com.br\n"; // This is the email address the generated message will be from. We recommend using something like noreply@yourdomain.com.
-$header .= "Reply-To: $email";	
+$subject = "Formulário de contato do site:  $name";
+$body = "Você recebeu uma nova mensagem do formulário de contato do site.\n\n"."Aqui estão os detalhes:\n\nNome: $name\n\nEmail: $email\n\nFone: $phone\n\nMenssagem:\n$message";
+$header = "De: noreply@ragtratores.com.br\n"; // This is the email address the generated message will be from. We recommend using something like noreply@yourdomain.com.
+$header .= "Resposta-p/: $email";
 
 if(!mail($to, $subject, $body, $header))
   http_response_code(500);
